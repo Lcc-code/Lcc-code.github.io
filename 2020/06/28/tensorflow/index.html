@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>tensorflow | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Tensorflow#入门学习  版本：V1.0作者：Lcc主要介绍：学习tensorflow基础     1.张量（Tensor）:多维数组（列表）使用阶表示张量的维数      维数 阶 名字 例子    0-D 0 标量 scalar s &#x3D; 123   1-D 1 向量 vector v &#x3D; [1, 2, 3]   2-D 2 矩阵 matrix m &#x3D; [[1, 2, 3], [4, 5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensorflow">
+<meta property="og:url" content="http://yoursite.com/2020/06/28/tensorflow/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Tensorflow#入门学习  版本：V1.0作者：Lcc主要介绍：学习tensorflow基础     1.张量（Tensor）:多维数组（列表）使用阶表示张量的维数      维数 阶 名字 例子    0-D 0 标量 scalar s &#x3D; 123   1-D 1 向量 vector v &#x3D; [1, 2, 3]   2-D 2 矩阵 matrix m &#x3D; [[1, 2, 3], [4, 5">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-28T09:03:55.036Z">
+<meta property="article:modified_time" content="2020-06-28T09:17:27.831Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tensorflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/28/tensorflow/" class="article-date">
+  <time datetime="2020-06-28T09:03:55.036Z" itemprop="datePublished">2020-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tensorflow
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow#"></a>Tensorflow#</h1><h3 id="入门学习"><a href="#入门学习" class="headerlink" title="入门学习"></a>入门学习</h3><blockquote>
+</blockquote>
+<p>版本：V1.0<br>作者：Lcc<br>主要介绍：学习tensorflow基础   </p>
+<hr>
+<h3 id="1-张量（Tensor）-多维数组（列表）"><a href="#1-张量（Tensor）-多维数组（列表）" class="headerlink" title="1.张量（Tensor）:多维数组（列表）"></a>1.张量（Tensor）:多维数组（列表）</h3><p>使用阶表示张量的维数  </p>
+<table>
+<thead>
+<tr>
+<th>维数</th>
+<th>阶</th>
+<th>名字</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0-D</td>
+<td>0</td>
+<td>标量 scalar</td>
+<td>s = 123</td>
+</tr>
+<tr>
+<td>1-D</td>
+<td>1</td>
+<td>向量 vector</td>
+<td>v = [1, 2, 3]</td>
+</tr>
+<tr>
+<td>2-D</td>
+<td>2</td>
+<td>矩阵 matrix</td>
+<td>m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</td>
+</tr>
+<tr>
+<td>n-D</td>
+<td>n</td>
+<td>张量 tensor</td>
+<td>t = [[[</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2.数据类型:"></a>2.数据类型:</h3><p>tensorflow 基本数据类型  </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tf.int, tf.float</td>
+<td>tf.int 32, tf.float 32, tf.float 64</td>
+</tr>
+<tr>
+<td>tf.bool</td>
+<td>tf.constant([True, False])</td>
+</tr>
+<tr>
+<td>tf.string</td>
+<td>tf.constant(“Hello,world!”)</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="3-如何创建一个Tensor"><a href="#3-如何创建一个Tensor" class="headerlink" title="3.如何创建一个Tensor:"></a>3.如何创建一个Tensor:</h3><h4 id="3-1创建一个张量"><a href="#3-1创建一个张量" class="headerlink" title="3.1创建一个张量"></a>3.1创建一个张量</h4><p>tf.constant(张量内容，dtype=数据类型(可选))<br><code>import tensorflow as tf</code><br><code>a = tf.constant([1,5], dtype = tf.int64)</code><br><code>print(a)</code><br><code>print(a.dtype)</code><br><code>print(a.shape)</code>  </p>
+<p>输出结果：<br><code>tf.Tensor([1 5],shape=(2,), dtype=int64)</code><br><code>&lt;dtype: &#39;int64&#39;&gt;</code><br><code>(2,)</code>  </p>
+<h4 id="3-2-将numpy的数据类型转换为Tensor数据类型"><a href="#3-2-将numpy的数据类型转换为Tensor数据类型" class="headerlink" title="3.2 将numpy的数据类型转换为Tensor数据类型"></a>3.2 将numpy的数据类型转换为Tensor数据类型</h4><p>使用’tf.convert_to_tensor(数据名， dtype=数据类型(可选))<br><code>import tensorflow as tf</code><br><code>import numpy as np</code><br><code>a = np.arange(0 ,5)</code><br><code>b = tf.convert_to_tensor(a,dtype=tf.int64)</code><br><code>print(a)</code><br><code>print(b)</code>  </p>
+<p>输出结果：<br><code>[0 1 2 3 4]</code><br><code>tf.Tensor([0 1 2 3 4], shape=(5,),dtype=int64)</code>    </p>
+<p>创建一个Tensor:  </p>
+<p>创建全为0的张量：<br><code>tf.zeros(维度)</code><br>创建全为1的张量：<br><code>tf.ones(维度)</code><br>创建全为指定值的张量：<br><code>tf.fill(维度, 指定值)</code>     </p>
+<p><code>a = tf.zeros([2, 3])</code><br><code>b = tf.ones(4)</code><br><code>c = tf.fill([2, 2], 9)</code><br><code>print(a)</code><br><code>print(b)</code><br><code>print(c)</code><br> 输出结果：<br><code>tf.Tensor([[0. 0. 0.] [0. 0. 0.]], shape=(2, 3), dtype=float32)</code><br><code>tf.Tensor([1. 1. 1. 1.], shape=(4,), dtype=float32)</code><br><code>tf.Tensor([[9 9] [9 9]], shape=(2, 2), dtype=int32)</code><br>生成随机数：<br>生成正态分布的随机数，默认均值为0， 标准差为1：<br><code>tf.random.normal(维度, mean=均值, stddev=标准差)</code><br>生成截断式正态分布的随机数：<br><code>tf.random.truncated_norman(维度, mean=均值, stdde=标准差)</code><br>下面的截断式函数可以保证生成的数据取值在 (μ-2\sigma, μ+2\sigma)<br><code>d = tf.random.normal([2, 2], mean=0.5, stddev=1)</code><br><code>print(d)</code><br><code>e = tf.random.truncated_normal([2, 2], mean=0.5, stddev=1)</code><br><code>print(e)</code><br>输出结果：<br><code>tf.Tensor([[ 2.7732759  1.5281683] [ 0.8153268 -1.7412734]], shape=(2, 2), dtype=float32)</code><br><code>tf.Tensor([[ 1.2032015  -0.16145211] [ 1.8375425   1.4746517 ]], shape=(2, 2), dtype=float32)</code><br>生成均匀分布随机数 [minval, maxval]是前闭后开区间：<br>tf.random.uniform(维度, minval = 最小值, maxval = 最大值)<br><code>f = tf.random.uniform([2, 2], minval=0, maxval=1)</code><br><code>print(f)</code><br>[minval, maxval]是前闭后开区间<br>输出结果：<br><code>tf.Tensor([[0.33821785 0.6668376 ] [0.9511744  0.16224515]], shape=(2, 2), dtype=float32)</code>  </p>
+<hr>
+<p><strong>感谢北京大学网课项目</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1B7411L7Qt?p=4" target="_blank" rel="noopener">网课</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/28/tensorflow/" data-id="ckbyv181v0002iowg5q3wddto" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的第一篇博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/28/tensorflow/">tensorflow</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
