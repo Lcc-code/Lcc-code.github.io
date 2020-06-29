@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客 | Hexo</title>
+  <title>tensorflow2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+  <meta name="description" content="Tensorflow#入门学习  版本：V1.0作者：Lcc主要介绍：学习tensorflow基础第二部分常用函数     1.张量（Tensor）常用计算函数:1.1 强制tensor 转换为该数据类型tf.cast(张量名, dtype&#x3D;数据类型)   1.2 计算张量维度上元素的最小值tf.reduce_min(张量名)   1.3 计算张量维度上元素的最大值tf.reduce_max(张量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensorflow2">
+<meta property="og:url" content="http://yoursite.com/2020/06/29/tensorflow2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Tensorflow#入门学习  版本：V1.0作者：Lcc主要介绍：学习tensorflow基础第二部分常用函数     1.张量（Tensor）常用计算函数:1.1 强制tensor 转换为该数据类型tf.cast(张量名, dtype&#x3D;数据类型)   1.2 计算张量维度上元素的最小值tf.reduce_min(张量名)   1.3 计算张量维度上元素的最大值tf.reduce_max(张量">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-27T16:42:16.000Z">
-<meta property="article:modified_time" content="2020-06-27T16:42:16.356Z">
+<meta property="article:published_time" content="2020-06-29T06:51:19.474Z">
+<meta property="article:modified_time" content="2020-06-29T07:04:59.239Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -156,27 +158,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-tensorflow2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      tensorflow2
     </h1>
   
 
         
-        <a href="/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-06-27T16:42:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+        <a href="/2020/06/29/tensorflow2/" class="archive-article-date">
+  	<time datetime="2020-06-29T06:51:19.474Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow#"></a>Tensorflow#</h1><h3 id="入门学习"><a href="#入门学习" class="headerlink" title="入门学习"></a>入门学习</h3><blockquote>
+</blockquote>
+<p>版本：V1.0<br>作者：Lcc<br>主要介绍：学习tensorflow基础第二部分常用函数   </p>
+<hr>
+<h3 id="1-张量（Tensor）常用计算函数"><a href="#1-张量（Tensor）常用计算函数" class="headerlink" title="1.张量（Tensor）常用计算函数:"></a>1.张量（Tensor）常用计算函数:</h3><h4 id="1-1-强制tensor-转换为该数据类型"><a href="#1-1-强制tensor-转换为该数据类型" class="headerlink" title="1.1 强制tensor 转换为该数据类型"></a>1.1 强制tensor 转换为该数据类型</h4><p><code>tf.cast(张量名, dtype=数据类型)</code>  </p>
+<h4 id="1-2-计算张量维度上元素的最小值"><a href="#1-2-计算张量维度上元素的最小值" class="headerlink" title="1.2 计算张量维度上元素的最小值"></a>1.2 计算张量维度上元素的最小值</h4><p><code>tf.reduce_min(张量名)</code>  </p>
+<h4 id="1-3-计算张量维度上元素的最大值"><a href="#1-3-计算张量维度上元素的最大值" class="headerlink" title="1.3 计算张量维度上元素的最大值"></a>1.3 计算张量维度上元素的最大值</h4><p><code>tf.reduce_max(张量名)</code>  </p>
+<p>程序演示：<br>    <code>x1 = tf.constant([1., 2., 3.], dtype=tf.float64)</code><br>    <code>print(x1)</code><br>    <code>x2 = tf.cast(x1, tf.int32)</code><br>    <code>print(x2)</code><br>    <code>print(tf.reduce_min(x2), tf.reduce_max(x2))</code><br>输出：<br><code>tf.Tensor([1. 2. 3.], shape=(3,), dtype=float64)</code><br><code>tf.Tensor([1 2 3], shape=(3,), dtype=int32)</code><br><code>tf.Tensor(1, shape=(), dtype=int32) tf.Tensor(3, shape=(), dtype=int32)</code>    </p>
+<h4 id="1-4计算张量沿着指定维度的平均值"><a href="#1-4计算张量沿着指定维度的平均值" class="headerlink" title="1.4计算张量沿着指定维度的平均值"></a>1.4计算张量沿着指定维度的平均值</h4><p><code>tf.reduce_mean(张量名, axis=操作轴)</code><br>axis=1, axis=0,1为行,0为列</p>
+<h4 id="1-5-计算张量沿着指定维度的和"><a href="#1-5-计算张量沿着指定维度的和" class="headerlink" title="1.5 计算张量沿着指定维度的和"></a>1.5 计算张量沿着指定维度的和</h4><p><code>tf.reduce_sum(张量名, axis=操作轴)</code>  </p>
+<p>程序演示：<br><code>x = tf.constant([[1, 2, 3], [2, 2, 3]])</code><br><code>print(x)</code><br><code>print(tf.reduce_mean(x))</code><br><code>print(tf.reduce_mean(x, axis=1))</code>  </p>
+<p>输出：<br><code>tf.Tensor([[1 2 3] [2 2 3]], shape=(2, 3), dtype=int32)</code><br><code>tf.Tensor(2, shape=(), dtype=int32)</code><br><code>tf.Tensor([2 2], shape=(2,), dtype=int32)</code>        </p>
+<h4 id="1-6-标记可训练"><a href="#1-6-标记可训练" class="headerlink" title="1.6 标记可训练"></a>1.6 标记可训练</h4><p>tf.Variable(初始值)  将变量标记为”可训练“， 被标记的变量会在反向传播中记录梯度信息。<br>神经网络训练，常用该函数标记待训练参数。<br><code>w = tf.Variable(tf.random.normal([2, 2], mean=0, stddev=1))</code>  </p>
+<h4 id="1-7-TensorFlow中的数学运算"><a href="#1-7-TensorFlow中的数学运算" class="headerlink" title="1.7 TensorFlow中的数学运算"></a>1.7 TensorFlow中的数学运算</h4><p>对应元素四则运算： tf.add, tf.subtract, tf.multiply, tf.divide<br>平方、次方与开方： tf.square, tf.pow, tf.sqrt<br>矩阵乘： tf.matmul    </p>
+<p>实现两个张量对应元素相加：<br><code>tf.add(张量1， 张量2)</code><br>实现两个张量的对应元素相减：<br><code>tf.subtract(张量1， 张量2)</code><br>实现两个张量的对应元素相乘：<br><code>tf.multiply(张量1， 张量2)</code><br>实现两个张量的对应元素相除<br><code>tf.divide(张量1， 张量2)</code><br>    只有维度相同的张量才可以做到四则运算。  </p>
+<p>程序演示：<br><code>a = tf.ones([1, 3])</code><br><code>b = tf.fill([1, 3], 3.)</code><br><code>print(a)</code><br><code>print(b)</code><br><code>print(tf.add(a, b))</code><br><code>print(tf.subtract(a, b))</code><br><code>print(tf.multiply(a, b))</code><br><code>print(tf.divide(a, b))</code>   </p>
+<p>输出：<br><code>tf.Tensor([[1. 1. 1.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[3. 3. 3.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[4. 4. 4.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[-2. -2. -2.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[3. 3. 3.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[0.33333334 0.33333334 0.33333334]], shape=(1, 3), dtype=float32)</code></p>
+<p>实现张量平方：<br><code>tf.square(张量名)</code><br>实现某个张量n次方：<br><code>tf.pow(张量名， n次方数)</code><br>实现某个张量的开方：<br><code>tf.sqrt(张量名)</code>      </p>
+<p>程序演示：<br><code>a = tf.fill([1, 2], 3.)</code><br><code>print(a)</code><br><code>print(tf.pow(a, 3))</code><br><code>print(tf.square(a))</code><br><code>print(tf.sqrt(a))</code></p>
+<p>输出：<br><code>tf.Tensor([[3. 3.]], shape=(1, 2), dtype=float32)</code><br><code>tf.Tensor([[27. 27.]], shape=(1, 2), dtype=float32)</code><br><code>tf.Tensor([[9. 9.]], shape=(1, 2), dtype=float32)</code><br><code>tf.Tensor([[1.7320508 1.7320508]], shape=(1, 2), dtype=float32)</code>    </p>
+<p>实现两个矩阵相乘：<br><code>tf.matmul(矩阵1， 矩阵2)</code>  </p>
+<p>演示：<br><code>a = tf.ones([3, 2])</code><br><code>b = tf.fill([2, 3], 3.)</code><br><code>print(tf.matmul(a, b))</code><br>输出：<br><code>tf.Tensor(
+[[6. 6. 6.]
+ [6. 6. 6.]
+ [6. 6. 6.]], shape=(3, 3), dtype=float32)</code></p>
+<hr>
+<h3 id="2-常用函数2"><a href="#2-常用函数2" class="headerlink" title="2.常用函数2:"></a>2.常用函数2:</h3><h4 id="2-1-TensorFlow中的配对函数"><a href="#2-1-TensorFlow中的配对函数" class="headerlink" title="2.1 TensorFlow中的配对函数"></a>2.1 TensorFlow中的配对函数</h4><p>切分传入张量的第一维度，生成输入特征/标签对，构建数据集<br>data = tf.data.Dataset.from_tensor_slices((输入特征， 标签))<br>(Numpy 和 Tensor格式都可以用该语句读入数据)  </p>
+<p>演示：<br><code>features = tf.constant([12, 23, 10, 17])</code><br><code>labels = tf.constant([0, 1, 1, 0])</code><br><code>dataset = tf.data.Dataset.from_tensor_slices((features, labels))</code><br><code>print(dataset)</code><br><code>for element in dataset:</code><br>    <code>print(element)</code><br>输出：<br><code>&lt;TensorSliceDataset shapes: ((), ()), types: (tf.int32, tf.int32)&gt;</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=12&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=0&gt;)</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=23&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;)</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=10&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;)</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=17&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=0&gt;)</code></p>
+<h4 id="2-2-TensorFlow中的求导函数"><a href="#2-2-TensorFlow中的求导函数" class="headerlink" title="2.2 TensorFlow中的求导函数"></a>2.2 TensorFlow中的求导函数</h4><p><code>with结构记录计算过程， grandient求出张量的梯度：</code><br><code>代码演示：</code><br><code>with tf.GradientTape() as tape:</code><br>    <code>w = tf.Variable(tf.constant(3.0))</code><br>    <code>loss = tf.pow(w, 2)</code><br><code>grad = tape.gradient(loss, w)</code><br><code>print(grad)</code>  </p>
+<h4 id="2-3-TensorFlow中的枚举函数"><a href="#2-3-TensorFlow中的枚举函数" class="headerlink" title="2.3 TensorFlow中的枚举函数"></a>2.3 TensorFlow中的枚举函数</h4><p>enumerate 是python内建函数，可以遍历每一个元素（列表， 元组， 字符串）， 组合为：索引， 元素。常在for循环出现<br>    <code>enumerate(列表名)</code><br>代码演示：<br><code>seq = [&#39;One&#39;, &#39;two&#39;, &#39;three&#39;]</code><br><code>for i, element in enumerate(seq):</code><br>    <code>print(i, element)</code><br>输出：<br><code>0 One</code><br><code>1 two</code><br><code>2 three</code>  </p>
+<h4 id="2-4-TensorFlow中的独热编码"><a href="#2-4-TensorFlow中的独热编码" class="headerlink" title="2.4 TensorFlow中的独热编码"></a>2.4 TensorFlow中的独热编码</h4><p>独热编码（one-hot encoding）:在分类问题中，常用到独热码做标签<br>标记类别：1是，0不是<br><code>tf.one_hot(代转换的数据， depth=三分类)</code>  </p>
+<p>代码演示:<br><code>classes = 3</code><br><code>labels = tf.constant([1, 0, 2])</code><br><code>output = tf.one_hot(labels, depth=classes)</code><br><code>print(output)</code><br>输出：<br><code>tf.Tensor(  
+[[0. 1. 0.]
+ [1. 0. 0.]
+ [0. 0. 1.]], shape=(3, 3), dtype=float32)</code>  </p>
+<hr>
+<h4 id="2-5-TensorFlow中SoFtmax"><a href="#2-5-TensorFlow中SoFtmax" class="headerlink" title="2.5 TensorFlow中SoFtmax()"></a>2.5 TensorFlow中SoFtmax()</h4><p>使用n分类的n个输出， 通过softmax()函数,符合概率分布  </p>
+<p>代码演示:<br><code>y = tf.constant([1.01, 2.01, -0.66])</code><br><code>y_pro = tf.nn.softmax(y)</code><br><code>print(&quot;After softmax, y_pro is&quot;, y_pro)</code><br>输出：<br><code>After softmax, y_pro is tf.Tensor([0.25598174 0.69583046 0.0481878 ], shape=(3,), dtype=float32)</code>  </p>
+<h3 id="2-6-TensorFlow中assign-sub"><a href="#2-6-TensorFlow中assign-sub" class="headerlink" title="2.6 TensorFlow中assign_sub()"></a>2.6 TensorFlow中assign_sub()</h3><p>赋值操作，更新参数并返回<br>调用assign_sub之前，先用tf.Variable 定义变量w 为可训练（可自更新）。<br>w.assign_sub(w要自减的内容):  </p>
+<p>代码演示：<br><code>w = tf.Variable(4)</code><br><code>w.assign_sub(1)</code><br><code>print(w)</code><br>输出：<br><code>&lt;tf.Variable &#39;Variable:0&#39; shape=() dtype=int32, numpy=3&gt;</code>  </p>
+<h3 id="2-7-TensorFlow中tf-argmax"><a href="#2-7-TensorFlow中tf-argmax" class="headerlink" title="2.7 TensorFlow中tf.argmax()"></a>2.7 TensorFlow中tf.argmax()</h3><p>返回张量沿指定维度最大值的索引<br><code>tf.argmax(张量名， axis=操作轴)</code>  </p>
+<p>代码演示：<br><code>test = np.array([[1, 2, 3], [2, 3, 4], [5, 4, 3], [8, 7, 2]])</code><br><code>print(test)</code><br><code>print(tf.argmax(test, axis=0))  # 返回每一列最大值额索引</code><br><code>print(tf.argmax(test, axis=1))  # 返回每一行最大值索引值</code><br>输出：<br><code>[[1 2 3]</code><br> <code>[2 3 4]</code><br> <code>[5 4 3]</code><br> <code>[8 7 2]]</code><br><code>tf.Tensor([3 3 1], shape=(3,), dtype=int64)</code><br><code>tf.Tensor([2 2 0 0], shape=(4,), dtype=int64)</code><br><code>tf.Tensor([3 3 1], shape=(3,), dtype=int64)</code>  </p>
+<hr>
+<p><strong>感谢北京大学网课项目</strong></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1B7411L7Qt?p=4" target="_blank" rel="noopener">网课</a></li>
+</ul>
+
       
 
       
@@ -255,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/29/tensorflow2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +318,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/28/tensorflow/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          tensorflow
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/06/28/tensorflow/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">tensorflow</div>
       <i class="icon-circle-right"></i>
     </a>
   
