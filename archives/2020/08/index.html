@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Archives: 2020/8 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2020/08/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -156,409 +156,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-linux-shell的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/linux-shell%E7%9A%84%E4%BD%BF%E7%94%A8/">linux shell的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/07/linux-shell%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/08/07/linux-shell%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
   	<time datetime="2020-08-07T02:39:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="shell-脚本语言简单使用"><a href="#shell-脚本语言简单使用" class="headerlink" title="shell 脚本语言简单使用"></a><strong>shell 脚本语言简单使用</strong></h1><p>shell 作为linux 脚本语言，对于我们学习他人程序流程以及方便自身开发都有很大帮助，值得学习。</p>
-<h2 id="顶行"><a href="#顶行" class="headerlink" title="顶行"></a>顶行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br></pre></td></tr></table></figure>
-
-<p>#!/bin/sh是指此脚本使用/bin/sh来解释执行，#!是特殊的表示符，其后面根的是此解释此脚本的shell的路径。</p>
-<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello-world"></a>hello-world</h3><p>永远的开始——hello-world，这里echo用来返回。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"Hello world \n"</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="返回参数"><a href="#返回参数" class="headerlink" title="返回参数"></a>返回参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;0&#125;</span> <span class="comment"># 返回执行文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;1&#125;</span> <span class="comment"># 返回输入的第一个参数</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;2&#125;</span> <span class="comment"># 返回输入的第二个参数</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;3&#125;</span> <span class="comment"># .</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;4&#125;</span> <span class="comment"># .</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;5&#125;</span> <span class="comment"># .</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;*&#125;</span> <span class="comment"># 返回所有参数</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#&#125;</span> <span class="comment"># 返回参数个数</span></span><br><span class="line"><span class="comment">#执行结果</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># sh ss.sh 1 2 3 4 5</span></span><br><span class="line">ss.sh</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">1 2 3 4 5</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-
-<h3 id="引入其他脚本文件"><a href="#引入其他脚本文件" class="headerlink" title="引入其他脚本文件"></a>引入其他脚本文件</h3><p>这里可能会报错。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. include.sh</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">source</span> include.sh</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="定义字符串变量"><a href="#定义字符串变量" class="headerlink" title="定义字符串变量"></a>定义字符串变量</h3><p>这里注意变量赋值“=”左右两端不能有空格。基本上shell中赋值都不可加空格。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str=sdfghh</span><br></pre></td></tr></table></figure>
-<h3 id="定义只读字符串"><a href="#定义只读字符串" class="headerlink" title="定义只读字符串"></a>定义只读字符串</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">readonly</span> str</span><br></pre></td></tr></table></figure>
-<h3 id="一些规则"><a href="#一些规则" class="headerlink" title="一些规则"></a>一些规则</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">""</span> <span class="comment"># 可以识别变量，但无法存放 $ ` \ "" 可以使用转义符</span></span><br><span class="line"><span class="string">''</span> <span class="comment"># 不解析字符，所有字符都认为普通字符，不解析变量</span></span><br><span class="line">\  <span class="comment"># 转义</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="长度计算"><a href="#长度计算" class="headerlink" title="长度计算"></a>长度计算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;#变量&#125;</span></span><br><span class="line"><span class="variable">$&#123;#str&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="子串提取"><a href="#子串提取" class="headerlink" title="子串提取"></a>子串提取</h3><p>从字符串第二个字符，提取三个字符</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;str:2:3&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h3><p>数组定义及取值</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array=(a b c d)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;array[0]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;array[1]&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串的计算"><a href="#字符串的计算" class="headerlink" title="字符串的计算"></a>字符串的计算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-lt  <span class="comment">#小于</span></span><br><span class="line">-le  <span class="comment">#小于等于</span></span><br><span class="line">-gt : <span class="comment">#大于</span></span><br><span class="line">-ge : <span class="comment">#大于等于</span></span><br><span class="line">-eq : <span class="comment">#等于</span></span><br><span class="line">-nq : <span class="comment">#不等于</span></span><br></pre></td></tr></table></figure>
-<h3 id="文件的判断"><a href="#文件的判断" class="headerlink" title="文件的判断"></a>文件的判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-f <span class="comment"># 普通文件</span></span><br><span class="line">-d <span class="comment"># 目录文件</span></span><br><span class="line">-w <span class="comment"># 文件可写</span></span><br><span class="line">-x <span class="comment"># 文件可执行</span></span><br><span class="line">-s <span class="comment"># 文件至少有一个字符</span></span><br><span class="line">-c <span class="comment"># 字符设备文件——比如鼠标键盘</span></span><br><span class="line">-b <span class="comment"># 块设备文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="测试工具：test"><a href="#测试工具：test" class="headerlink" title="测试工具：test"></a>测试工具：test</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span> <span class="comment"># 测试工具，成功的值 $? 表现为0，否则为1。</span></span><br></pre></td></tr></table></figure>
-<p>注意判断逻辑仍为正确和错误</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ 表达式 ] <span class="comment"># 简写形式：表达式前后需要空格</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="逻辑判断"><a href="#逻辑判断" class="headerlink" title="逻辑判断"></a>逻辑判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-a <span class="comment"># 逻辑与，and的简写。</span></span><br><span class="line">&amp;&amp;</span><br><span class="line">-o <span class="comment"># 逻辑或，or简写</span></span><br><span class="line">||</span><br><span class="line">！ <span class="comment"># 逻辑非，</span></span><br></pre></td></tr></table></figure>
-<h2 id="结构书写"><a href="#结构书写" class="headerlink" title="结构书写"></a>结构书写</h2><h3 id="if-分支结构"><a href="#if-分支结构" class="headerlink" title="if 分支结构"></a>if 分支结构</h3><p>简单判断，其中if 做起手，fi 做结束。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ 2 -lt 3 ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"2 &lt; 3"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment">#返回值</span></span><br><span class="line">2 &lt; 3</span><br></pre></td></tr></table></figure>
-<p>if——else：<br>其中read -p 是读取输入值 最后存入ch</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">read</span> -p <span class="string">"input a char:"</span> ch</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$ch</span> -ge 5 ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"&gt;=5"</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$ch</span> -ge 3 ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"&gt;=3"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"&lt;3"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">input a char:1</span><br><span class="line">&lt;3</span><br></pre></td></tr></table></figure>
-
-<h3 id="case-分支结构"><a href="#case-分支结构" class="headerlink" title="case 分支结构"></a>case 分支结构</h3><p>这里注意判断[]的空格问题，这里没有空格</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">read</span> -p <span class="string">"input a char:"</span> ch</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$ch</span> <span class="keyword">in</span></span><br><span class="line">[a-z])</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"alpha"</span></span><br><span class="line">;;</span><br><span class="line">[0-9])</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"number"</span></span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"others"</span></span><br><span class="line">;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># sh case.sh </span></span><br><span class="line">input a char:a</span><br><span class="line">alpha</span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># sh case.sh </span></span><br><span class="line">input a char:3</span><br><span class="line">number</span><br></pre></td></tr></table></figure>
-
-<h3 id="for-循环结构"><a href="#for-循环结构" class="headerlink" title="for 循环结构"></a>for 循环结构</h3><p>简单遍历</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> a b c</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$x</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># sh for.sh </span></span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
-<p>遍历目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> /*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$x</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># sh for.sh </span></span><br><span class="line">/<span class="string">'</span></span><br><span class="line"><span class="string">/1</span></span><br><span class="line"><span class="string">/bin</span></span><br><span class="line"><span class="string">/boot</span></span><br><span class="line"><span class="string">···</span></span><br></pre></td></tr></table></figure>
-<p>遍历数字：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> `seq 0 10`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$x</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># sh for.sh </span></span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-<p>累加：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> `seq 0 10`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">let</span> sum+=<span class="variable">$x</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$sum</span></span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">55</span><br></pre></td></tr></table></figure>
-<p>for 语句的传统写法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ((i=0;i&lt;=10;i++))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="while-循环结构"><a href="#while-循环结构" class="headerlink" title="while 循环结构"></a>while 循环结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i=1</span><br><span class="line"><span class="keyword">while</span> [ <span class="variable">$i</span> -le 10 ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line">		i=$[<span class="variable">$i</span>+1]</span><br><span class="line">        <span class="comment">#((i++))</span></span><br><span class="line">        <span class="comment"># 或用</span></span><br><span class="line">        <span class="comment"># let i+=1</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h3 id="until-循环结构"><a href="#until-循环结构" class="headerlink" title="until 循环结构"></a>until 循环结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">i=1</span><br><span class="line">until [ <span class="variable">$i</span> -gt 10 ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line">        ((i++))</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-<h3 id="break-循环结构"><a href="#break-循环结构" class="headerlink" title="break 循环结构"></a>break 循环结构</h3><p>这里注意 while与 ： 之间的空格。<br>这里的冒号命令 相当于true，放在while后面，表示无限循环</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> :</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">"input a char:"</span> ch</span><br><span class="line">        <span class="keyword">case</span> <span class="variable">$ch</span> <span class="keyword">in</span></span><br><span class="line">        <span class="comment">#1|3|5)  # 这里可以间断的判断值的取值</span></span><br><span class="line">        [1-5])   <span class="comment"># 这里连续判断取值</span></span><br><span class="line">                <span class="built_in">echo</span> <span class="string">"ok"</span></span><br><span class="line">        ;;</span><br><span class="line">        *)</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">"error"</span></span><br><span class="line">                <span class="built_in">break</span></span><br><span class="line">        ;;</span><br><span class="line">        <span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">input a char:1</span><br><span class="line">ok</span><br><span class="line">input a char:6</span><br><span class="line">error</span><br></pre></td></tr></table></figure>
-
-<h3 id="continue-循环结构"><a href="#continue-循环结构" class="headerlink" title="continue 循环结构"></a>continue 循环结构</h3><p>在 [] 内运算之后的值进行判断时，需要使用$[] 对其取值再做判断。<br>同时注意if语句的 fi 结束符号。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">i=1</span><br><span class="line"><span class="keyword">while</span> [ <span class="variable">$i</span> -le 10 ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> [ $[<span class="variable">$i</span>%3] -eq 0 ];<span class="keyword">then</span></span><br><span class="line">                ((i++))</span><br><span class="line">                <span class="built_in">continue</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line">        ((i++))</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-<h2 id="函数书写"><a href="#函数书写" class="headerlink" title="函数书写"></a>函数书写</h2><h3 id="hello-world-1"><a href="#hello-world-1" class="headerlink" title="hello world"></a>hello world</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">demo()</span><br><span class="line">&#123;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"hello world"</span></span><br><span class="line">&#125;</span><br><span class="line">demo</span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
-<h3 id="回调参数"><a href="#回调参数" class="headerlink" title="回调参数"></a>回调参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>()</span><br><span class="line">&#123;</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$1</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$2</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">test</span> 123 abc</span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">123</span><br><span class="line">abc</span><br></pre></td></tr></table></figure>
-<h3 id="函数返回值与接收"><a href="#函数返回值与接收" class="headerlink" title="函数返回值与接收"></a>函数返回值与接收</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add()</span><br><span class="line">&#123;</span><br><span class="line">        <span class="built_in">return</span> 123</span><br><span class="line">&#125;</span><br><span class="line">add</span><br><span class="line"><span class="built_in">echo</span> $?</span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><h3 id="判断与"><a href="#判断与" class="headerlink" title="判断与"></a>判断与</h3><p>如果2小于3 且 3小于5，输出。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ 2 -lt 3 -a 3 -lt 5 ];<span class="keyword">then</span></span><br><span class="line"><span class="comment"># 还可以这样写</span></span><br><span class="line"><span class="comment"># if [ 2 -lt 3 ] &amp;&amp; [ 3 -lt 5 ];then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"ok!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">ok!</span><br></pre></td></tr></table></figure>
-<h3 id="判断或"><a href="#判断或" class="headerlink" title="判断或"></a>判断或</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ 2 -gt 3 -o 3 -lt 5 ];<span class="keyword">then</span></span><br><span class="line"><span class="comment"># if [ 2 -gt 3 ] || [ 3 -lt 5 ];then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"ok!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">ok!</span><br></pre></td></tr></table></figure>
-<h3 id="取反"><a href="#取反" class="headerlink" title="取反"></a>取反</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! 2 -gt 3 ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"ok!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">ok!</span><br></pre></td></tr></table></figure>
-<h2 id="黑洞文件"><a href="#黑洞文件" class="headerlink" title="黑洞文件"></a>黑洞文件</h2><p>该文件如何写入都是空，任意时间读取都是空。</p>
-<p>用于清空文件，该文件在/dev/null。<br>将黑洞文件重定向到1.txt，即可清空文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/null &gt; 1.txt</span><br></pre></td></tr></table></figure>
-<p>还可以清空命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/null &gt;</span><br></pre></td></tr></table></figure>
-<h2 id="printf与字符串的拼接"><a href="#printf与字符串的拼接" class="headerlink" title="printf与字符串的拼接"></a>printf与字符串的拼接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">"hello %s\n"</span> <span class="string">"world"</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">"hello %d %s \n"</span> 123 <span class="string">"world"</span></span><br><span class="line"><span class="comment"># 输出结果：</span></span><br><span class="line">hello world</span><br><span class="line">hello 123 world</span><br></pre></td></tr></table></figure>
-<h2 id="sed-文件流处理"><a href="#sed-文件流处理" class="headerlink" title="sed 文件流处理"></a>sed 文件流处理</h2><p>作用：处理文件流<br>格式：sed [参数] 指令 文件<br>参数：<br>        -n:结合命令p使用，用于打印(并没有改变内容)。<br>        -i:默认不加 改 参数不会修改文件内容，加上会修改</p>
-<h3 id="用于查找"><a href="#用于查找" class="headerlink" title="用于查找"></a>用于查找</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印sed.sh文件第一行</span></span><br><span class="line">sed -n <span class="string">'1p'</span> sed.sh</span><br><span class="line"><span class="comment"># 打印第三行</span></span><br><span class="line">sed -n <span class="string">'3p'</span> sed.sh</span><br><span class="line"><span class="comment"># 打印最后一行</span></span><br><span class="line">sed -n <span class="string">'$p'</span> sed.sh</span><br><span class="line"><span class="comment"># 打印某个范围</span></span><br><span class="line">sed -n <span class="string">'3,5p'</span> sed.sh</span><br><span class="line">sed -n <span class="string">'3,$p'</span> sed.sh</span><br></pre></td></tr></table></figure>
-<h3 id="用于添加"><a href="#用于添加" class="headerlink" title="用于添加"></a>用于添加</h3><p>注意：没有添加 -i 参数，仍然未修改文件内容。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在第一行后面添加xxx</span></span><br><span class="line">sed <span class="string">'1a xxx'</span> sed.sh </span><br><span class="line"></span><br><span class="line"><span class="comment"># 在第1到第三行后面添加xxx</span></span><br><span class="line">sed <span class="string">'1,3a xxx'</span> sed.sh</span><br></pre></td></tr></table></figure>
-<h3 id="用于删除"><a href="#用于删除" class="headerlink" title="用于删除"></a>用于删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除第五行</span></span><br><span class="line">sed <span class="string">'5d'</span> sed.sh </span><br><span class="line"><span class="comment"># 删除第一到5行</span></span><br><span class="line">sed <span class="string">'1,5d'</span> sed.sh</span><br></pre></td></tr></table></figure>
-<h3 id="用于取代"><a href="#用于取代" class="headerlink" title="用于取代"></a>用于取代</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取代第三行</span></span><br><span class="line">sed <span class="string">'3c xxx'</span> sed.sh </span><br><span class="line"><span class="comment"># 取代第三到五行</span></span><br><span class="line">sed <span class="string">'3,5c xxx'</span> sed.sh</span><br></pre></td></tr></table></figure>
-<h3 id="用于替换"><a href="#用于替换" class="headerlink" title="用于替换"></a>用于替换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># s 用于替换，查找ia，并用xxx替换，/g全局。</span></span><br><span class="line">sed <span class="string">'s/ia/xxx/g'</span> sed.sh </span><br><span class="line"><span class="comment"># 在5到6行进行操作。</span></span><br><span class="line">sed <span class="string">'5，6s/ia/xxx/g'</span> sed.sh</span><br></pre></td></tr></table></figure>
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><h3 id="管道（-）"><a href="#管道（-）" class="headerlink" title="管道（|）"></a>管道（|）</h3><p>说明：将前一个命令的输出作为后一个命令的输入。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 作为more的参数输入</span></span><br><span class="line">ls -l /etc/ | more</span><br><span class="line"><span class="comment"># 打印包含 vi 的</span></span><br><span class="line">ls -l /etc/ | grep vi</span><br><span class="line"><span class="comment"># 执行结果：</span></span><br><span class="line">-rw-r--r--  1 root root        96 9月  30  2019 environment</span><br><span class="line">-rw-r--r--  1 root root     19183 12月 26  2016 services</span><br><span class="line">drwxr-xr-x  2 root root      4096 10月 13  2019 vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印vi开头的</span></span><br><span class="line">ls -l /etc/ | grep <span class="string">'^vi'</span></span><br></pre></td></tr></table></figure>
-<p>假如有些命令不接受参数，添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -<span class="built_in">type</span> d | xargs rm -r</span><br></pre></td></tr></table></figure>
-
-<h3 id="重定向-gt"><a href="#重定向-gt" class="headerlink" title="重定向 (&gt;)"></a>重定向 (&gt;)</h3><p>打开任意程序，系统自动创建三个文件流：标准输入（0），标准输出（1），标准错误（2），而且这三个文件都被指向到了终端。</p>
-<p>我们可以使用 &gt; 输出到文件中<br>输出重定向：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@chilewang-Lenovo:~<span class="comment"># echo 1 &gt; 1.txt</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># cat 1.txt</span></span><br><span class="line">1</span><br><span class="line"><span class="comment"># 使用&gt;&gt; 进行追加</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># echo 1 &gt;&gt; 1.txt</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># cat 1.txt</span></span><br><span class="line">1</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-<p>错误重定向：<br>注意这里的 “2&gt;1”不能有空格</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@chilewang-Lenovo:~<span class="comment"># ls /abc 2&gt;1.txt</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># cat 1.txt</span></span><br><span class="line">ls: 无法访问<span class="string">'/abc'</span>: 没有那个文件或目录</span><br></pre></td></tr></table></figure>
-
-<p>将多个输出同时定向到一个文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@chilewang-Lenovo:~<span class="comment"># ls /abc . &amp;&gt;1.txt</span></span><br><span class="line">root@chilewang-Lenovo:~<span class="comment"># cat 1.txt </span></span><br><span class="line">ls: 无法访问<span class="string">'/abc'</span>: 没有那个文件或目录</span><br><span class="line">.:</span><br><span class="line">1</span><br><span class="line">1.sh</span><br><span class="line">1.txt</span><br><span class="line">break.sh</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/07/linux-shell%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tensorflow2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/29/tensorflow2/">tensorflow2</a>
+      <a class="archive-article-title" href="/2020/08/07/linux-shell%E7%9A%84%E4%BD%BF%E7%94%A8/">linux shell的使用</a>
     </h1>
   
 
-        
-        <a href="/2020/06/29/tensorflow2/" class="archive-article-date">
-  	<time datetime="2020-06-29T06:51:19.474Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow#"></a>Tensorflow#</h1><h3 id="入门学习"><a href="#入门学习" class="headerlink" title="入门学习"></a>入门学习</h3><blockquote>
-</blockquote>
-<p>版本：V1.0<br>作者：Lcc<br>主要介绍：学习tensorflow基础第二部分常用函数   </p>
-<hr>
-<h3 id="1-张量（Tensor）常用计算函数"><a href="#1-张量（Tensor）常用计算函数" class="headerlink" title="1.张量（Tensor）常用计算函数:"></a>1.张量（Tensor）常用计算函数:</h3><h4 id="1-1-强制tensor-转换为该数据类型"><a href="#1-1-强制tensor-转换为该数据类型" class="headerlink" title="1.1 强制tensor 转换为该数据类型"></a>1.1 强制tensor 转换为该数据类型</h4><p><code>tf.cast(张量名, dtype=数据类型)</code>  </p>
-<h4 id="1-2-计算张量维度上元素的最小值"><a href="#1-2-计算张量维度上元素的最小值" class="headerlink" title="1.2 计算张量维度上元素的最小值"></a>1.2 计算张量维度上元素的最小值</h4><p><code>tf.reduce_min(张量名)</code>  </p>
-<h4 id="1-3-计算张量维度上元素的最大值"><a href="#1-3-计算张量维度上元素的最大值" class="headerlink" title="1.3 计算张量维度上元素的最大值"></a>1.3 计算张量维度上元素的最大值</h4><p><code>tf.reduce_max(张量名)</code>  </p>
-<p>程序演示：<br>    <code>x1 = tf.constant([1., 2., 3.], dtype=tf.float64)</code><br>    <code>print(x1)</code><br>    <code>x2 = tf.cast(x1, tf.int32)</code><br>    <code>print(x2)</code><br>    <code>print(tf.reduce_min(x2), tf.reduce_max(x2))</code><br>输出：<br><code>tf.Tensor([1. 2. 3.], shape=(3,), dtype=float64)</code><br><code>tf.Tensor([1 2 3], shape=(3,), dtype=int32)</code><br><code>tf.Tensor(1, shape=(), dtype=int32) tf.Tensor(3, shape=(), dtype=int32)</code>    </p>
-<h4 id="1-4计算张量沿着指定维度的平均值"><a href="#1-4计算张量沿着指定维度的平均值" class="headerlink" title="1.4计算张量沿着指定维度的平均值"></a>1.4计算张量沿着指定维度的平均值</h4><p><code>tf.reduce_mean(张量名, axis=操作轴)</code><br>axis=1, axis=0,1为行,0为列</p>
-<h4 id="1-5-计算张量沿着指定维度的和"><a href="#1-5-计算张量沿着指定维度的和" class="headerlink" title="1.5 计算张量沿着指定维度的和"></a>1.5 计算张量沿着指定维度的和</h4><p><code>tf.reduce_sum(张量名, axis=操作轴)</code>  </p>
-<p>程序演示：<br><code>x = tf.constant([[1, 2, 3], [2, 2, 3]])</code><br><code>print(x)</code><br><code>print(tf.reduce_mean(x))</code><br><code>print(tf.reduce_mean(x, axis=1))</code>  </p>
-<p>输出：<br><code>tf.Tensor([[1 2 3] [2 2 3]], shape=(2, 3), dtype=int32)</code><br><code>tf.Tensor(2, shape=(), dtype=int32)</code><br><code>tf.Tensor([2 2], shape=(2,), dtype=int32)</code>        </p>
-<h4 id="1-6-标记可训练"><a href="#1-6-标记可训练" class="headerlink" title="1.6 标记可训练"></a>1.6 标记可训练</h4><p>tf.Variable(初始值)  将变量标记为”可训练“， 被标记的变量会在反向传播中记录梯度信息。<br>神经网络训练，常用该函数标记待训练参数。<br><code>w = tf.Variable(tf.random.normal([2, 2], mean=0, stddev=1))</code>  </p>
-<h4 id="1-7-TensorFlow中的数学运算"><a href="#1-7-TensorFlow中的数学运算" class="headerlink" title="1.7 TensorFlow中的数学运算"></a>1.7 TensorFlow中的数学运算</h4><p>对应元素四则运算： tf.add, tf.subtract, tf.multiply, tf.divide<br>平方、次方与开方： tf.square, tf.pow, tf.sqrt<br>矩阵乘： tf.matmul    </p>
-<p>实现两个张量对应元素相加：<br><code>tf.add(张量1， 张量2)</code><br>实现两个张量的对应元素相减：<br><code>tf.subtract(张量1， 张量2)</code><br>实现两个张量的对应元素相乘：<br><code>tf.multiply(张量1， 张量2)</code><br>实现两个张量的对应元素相除<br><code>tf.divide(张量1， 张量2)</code><br>    只有维度相同的张量才可以做到四则运算。  </p>
-<p>程序演示：<br><code>a = tf.ones([1, 3])</code><br><code>b = tf.fill([1, 3], 3.)</code><br><code>print(a)</code><br><code>print(b)</code><br><code>print(tf.add(a, b))</code><br><code>print(tf.subtract(a, b))</code><br><code>print(tf.multiply(a, b))</code><br><code>print(tf.divide(a, b))</code>   </p>
-<p>输出：<br><code>tf.Tensor([[1. 1. 1.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[3. 3. 3.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[4. 4. 4.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[-2. -2. -2.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[3. 3. 3.]], shape=(1, 3), dtype=float32)</code><br><code>tf.Tensor([[0.33333334 0.33333334 0.33333334]], shape=(1, 3), dtype=float32)</code></p>
-<p>实现张量平方：<br><code>tf.square(张量名)</code><br>实现某个张量n次方：<br><code>tf.pow(张量名， n次方数)</code><br>实现某个张量的开方：<br><code>tf.sqrt(张量名)</code>      </p>
-<p>程序演示：<br><code>a = tf.fill([1, 2], 3.)</code><br><code>print(a)</code><br><code>print(tf.pow(a, 3))</code><br><code>print(tf.square(a))</code><br><code>print(tf.sqrt(a))</code></p>
-<p>输出：<br><code>tf.Tensor([[3. 3.]], shape=(1, 2), dtype=float32)</code><br><code>tf.Tensor([[27. 27.]], shape=(1, 2), dtype=float32)</code><br><code>tf.Tensor([[9. 9.]], shape=(1, 2), dtype=float32)</code><br><code>tf.Tensor([[1.7320508 1.7320508]], shape=(1, 2), dtype=float32)</code>    </p>
-<p>实现两个矩阵相乘：<br><code>tf.matmul(矩阵1， 矩阵2)</code>  </p>
-<p>演示：<br><code>a = tf.ones([3, 2])</code><br><code>b = tf.fill([2, 3], 3.)</code><br><code>print(tf.matmul(a, b))</code><br>输出：<br><code>tf.Tensor(
-[[6. 6. 6.]
- [6. 6. 6.]
- [6. 6. 6.]], shape=(3, 3), dtype=float32)</code></p>
-<hr>
-<h3 id="2-常用函数2"><a href="#2-常用函数2" class="headerlink" title="2.常用函数2:"></a>2.常用函数2:</h3><h4 id="2-1-TensorFlow中的配对函数"><a href="#2-1-TensorFlow中的配对函数" class="headerlink" title="2.1 TensorFlow中的配对函数"></a>2.1 TensorFlow中的配对函数</h4><p>切分传入张量的第一维度，生成输入特征/标签对，构建数据集<br>data = tf.data.Dataset.from_tensor_slices((输入特征， 标签))<br>(Numpy 和 Tensor格式都可以用该语句读入数据)  </p>
-<p>演示：<br><code>features = tf.constant([12, 23, 10, 17])</code><br><code>labels = tf.constant([0, 1, 1, 0])</code><br><code>dataset = tf.data.Dataset.from_tensor_slices((features, labels))</code><br><code>print(dataset)</code><br><code>for element in dataset:</code><br>    <code>print(element)</code><br>输出：<br><code>&lt;TensorSliceDataset shapes: ((), ()), types: (tf.int32, tf.int32)&gt;</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=12&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=0&gt;)</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=23&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;)</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=10&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=1&gt;)</code><br><code>(&lt;tf.Tensor: shape=(), dtype=int32, numpy=17&gt;, &lt;tf.Tensor: shape=(), dtype=int32, numpy=0&gt;)</code></p>
-<h4 id="2-2-TensorFlow中的求导函数"><a href="#2-2-TensorFlow中的求导函数" class="headerlink" title="2.2 TensorFlow中的求导函数"></a>2.2 TensorFlow中的求导函数</h4><p><code>with结构记录计算过程， grandient求出张量的梯度：</code><br><code>代码演示：</code><br><code>with tf.GradientTape() as tape:</code><br>    <code>w = tf.Variable(tf.constant(3.0))</code><br>    <code>loss = tf.pow(w, 2)</code><br><code>grad = tape.gradient(loss, w)</code><br><code>print(grad)</code>  </p>
-<h4 id="2-3-TensorFlow中的枚举函数"><a href="#2-3-TensorFlow中的枚举函数" class="headerlink" title="2.3 TensorFlow中的枚举函数"></a>2.3 TensorFlow中的枚举函数</h4><p>enumerate 是python内建函数，可以遍历每一个元素（列表， 元组， 字符串）， 组合为：索引， 元素。常在for循环出现<br>    <code>enumerate(列表名)</code><br>代码演示：<br><code>seq = [&#39;One&#39;, &#39;two&#39;, &#39;three&#39;]</code><br><code>for i, element in enumerate(seq):</code><br>    <code>print(i, element)</code><br>输出：<br><code>0 One</code><br><code>1 two</code><br><code>2 three</code>  </p>
-<h4 id="2-4-TensorFlow中的独热编码"><a href="#2-4-TensorFlow中的独热编码" class="headerlink" title="2.4 TensorFlow中的独热编码"></a>2.4 TensorFlow中的独热编码</h4><p>独热编码（one-hot encoding）:在分类问题中，常用到独热码做标签<br>标记类别：1是，0不是<br><code>tf.one_hot(代转换的数据， depth=三分类)</code>  </p>
-<p>代码演示:<br><code>classes = 3</code><br><code>labels = tf.constant([1, 0, 2])</code><br><code>output = tf.one_hot(labels, depth=classes)</code><br><code>print(output)</code><br>输出：<br><code>tf.Tensor(  
-[[0. 1. 0.]
- [1. 0. 0.]
- [0. 0. 1.]], shape=(3, 3), dtype=float32)</code>  </p>
-<hr>
-<h4 id="2-5-TensorFlow中SoFtmax"><a href="#2-5-TensorFlow中SoFtmax" class="headerlink" title="2.5 TensorFlow中SoFtmax()"></a>2.5 TensorFlow中SoFtmax()</h4><p>使用n分类的n个输出， 通过softmax()函数,符合概率分布  </p>
-<p>代码演示:<br><code>y = tf.constant([1.01, 2.01, -0.66])</code><br><code>y_pro = tf.nn.softmax(y)</code><br><code>print(&quot;After softmax, y_pro is&quot;, y_pro)</code><br>输出：<br><code>After softmax, y_pro is tf.Tensor([0.25598174 0.69583046 0.0481878 ], shape=(3,), dtype=float32)</code>  </p>
-<h3 id="2-6-TensorFlow中assign-sub"><a href="#2-6-TensorFlow中assign-sub" class="headerlink" title="2.6 TensorFlow中assign_sub()"></a>2.6 TensorFlow中assign_sub()</h3><p>赋值操作，更新参数并返回<br>调用assign_sub之前，先用tf.Variable 定义变量w 为可训练（可自更新）。<br>w.assign_sub(w要自减的内容):  </p>
-<p>代码演示：<br><code>w = tf.Variable(4)</code><br><code>w.assign_sub(1)</code><br><code>print(w)</code><br>输出：<br><code>&lt;tf.Variable &#39;Variable:0&#39; shape=() dtype=int32, numpy=3&gt;</code>  </p>
-<h3 id="2-7-TensorFlow中tf-argmax"><a href="#2-7-TensorFlow中tf-argmax" class="headerlink" title="2.7 TensorFlow中tf.argmax()"></a>2.7 TensorFlow中tf.argmax()</h3><p>返回张量沿指定维度最大值的索引<br><code>tf.argmax(张量名， axis=操作轴)</code>  </p>
-<p>代码演示：<br><code>test = np.array([[1, 2, 3], [2, 3, 4], [5, 4, 3], [8, 7, 2]])</code><br><code>print(test)</code><br><code>print(tf.argmax(test, axis=0))  # 返回每一列最大值额索引</code><br><code>print(tf.argmax(test, axis=1))  # 返回每一行最大值索引值</code><br>输出：<br><code>[[1 2 3]</code><br> <code>[2 3 4]</code><br> <code>[5 4 3]</code><br> <code>[8 7 2]]</code><br><code>tf.Tensor([3 3 1], shape=(3,), dtype=int64)</code><br><code>tf.Tensor([2 2 0 0], shape=(4,), dtype=int64)</code><br><code>tf.Tensor([3 3 1], shape=(3,), dtype=int64)</code>  </p>
-<hr>
-<p><strong>感谢北京大学网课项目</strong></p>
-<ul>
-<li><a href="https://www.bilibili.com/video/BV1B7411L7Qt?p=4" target="_blank" rel="noopener">网课</a></li>
-</ul>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/29/tensorflow2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-tensorflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/tensorflow/">tensorflow</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/28/tensorflow/" class="archive-article-date">
-  	<time datetime="2020-06-28T09:03:55.036Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow#"></a>Tensorflow#</h1><h3 id="入门学习"><a href="#入门学习" class="headerlink" title="入门学习"></a>入门学习</h3><blockquote>
-</blockquote>
-<p>版本：V1.0<br>作者：Lcc<br>主要介绍：学习tensorflow基础   </p>
-<hr>
-<h3 id="1-张量（Tensor）-多维数组（列表）"><a href="#1-张量（Tensor）-多维数组（列表）" class="headerlink" title="1.张量（Tensor）:多维数组（列表）"></a>1.张量（Tensor）:多维数组（列表）</h3><p>使用阶表示张量的维数  </p>
-<table>
-<thead>
-<tr>
-<th>维数</th>
-<th>阶</th>
-<th>名字</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0-D</td>
-<td>0</td>
-<td>标量 scalar</td>
-<td>s = 123</td>
-</tr>
-<tr>
-<td>1-D</td>
-<td>1</td>
-<td>向量 vector</td>
-<td>v = [1, 2, 3]</td>
-</tr>
-<tr>
-<td>2-D</td>
-<td>2</td>
-<td>矩阵 matrix</td>
-<td>m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</td>
-</tr>
-<tr>
-<td>n-D</td>
-<td>n</td>
-<td>张量 tensor</td>
-<td>t = [[[</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2.数据类型:"></a>2.数据类型:</h3><p>tensorflow 基本数据类型  </p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>实例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>tf.int, tf.float</td>
-<td>tf.int 32, tf.float 32, tf.float 64</td>
-</tr>
-<tr>
-<td>tf.bool</td>
-<td>tf.constant([True, False])</td>
-</tr>
-<tr>
-<td>tf.string</td>
-<td>tf.constant(“Hello,world!”)</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="3-如何创建一个Tensor"><a href="#3-如何创建一个Tensor" class="headerlink" title="3.如何创建一个Tensor:"></a>3.如何创建一个Tensor:</h3><h4 id="3-1创建一个张量"><a href="#3-1创建一个张量" class="headerlink" title="3.1创建一个张量"></a>3.1创建一个张量</h4><p>tf.constant(张量内容，dtype=数据类型(可选))<br><code>import tensorflow as tf</code><br><code>a = tf.constant([1,5], dtype = tf.int64)</code><br><code>print(a)</code><br><code>print(a.dtype)</code><br><code>print(a.shape)</code>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">readonly</span> str</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：<br><code>tf.Tensor([1 5],shape=(2,), dtype=int64)</code><br><code>&lt;dtype: &#39;int64&#39;&gt;</code><br><code>(2,)</code>  </p>
-<h4 id="3-2-将numpy的数据类型转换为Tensor数据类型"><a href="#3-2-将numpy的数据类型转换为Tensor数据类型" class="headerlink" title="3.2 将numpy的数据类型转换为Tensor数据类型"></a>3.2 将numpy的数据类型转换为Tensor数据类型</h4><p>使用’tf.convert_to_tensor(数据名， dtype=数据类型(可选))<br><code>import tensorflow as tf</code><br><code>import numpy as np</code><br><code>a = np.arange(0 ,5)</code><br><code>b = tf.convert_to_tensor(a,dtype=tf.int64)</code><br><code>print(a)</code><br><code>print(b)</code>  </p>
-<p>输出结果：<br><code>[0 1 2 3 4]</code><br><code>tf.Tensor([0 1 2 3 4], shape=(5,),dtype=int64)</code>    </p>
-<p>创建一个Tensor:  </p>
-<p>创建全为0的张量：<br><code>tf.zeros(维度)</code><br>创建全为1的张量：<br><code>tf.ones(维度)</code><br>创建全为指定值的张量：<br><code>tf.fill(维度, 指定值)</code>     </p>
-<p><code>a = tf.zeros([2, 3])</code><br><code>b = tf.ones(4)</code><br><code>c = tf.fill([2, 2], 9)</code><br><code>print(a)</code><br><code>print(b)</code><br><code>print(c)</code><br> 输出结果：<br><code>tf.Tensor([[0. 0. 0.] [0. 0. 0.]], shape=(2, 3), dtype=float32)</code><br><code>tf.Tensor([1. 1. 1. 1.], shape=(4,), dtype=float32)</code><br><code>tf.Tensor([[9 9] [9 9]], shape=(2, 2), dtype=int32)</code><br>生成随机数：<br>生成正态分布的随机数，默认均值为0， 标准差为1：<br><code>tf.random.normal(维度, mean=均值, stddev=标准差)</code><br>生成截断式正态分布的随机数：<br><code>tf.random.truncated_norman(维度, mean=均值, stdde=标准差)</code><br>下面的截断式函数可以保证生成的数据取值在 (μ-2\sigma, μ+2\sigma)<br><code>d = tf.random.normal([2, 2], mean=0.5, stddev=1)</code><br><code>print(d)</code><br><code>e = tf.random.truncated_normal([2, 2], mean=0.5, stddev=1)</code><br><code>print(e)</code><br>输出结果：<br><code>tf.Tensor([[ 2.7732759  1.5281683] [ 0.8153268 -1.7412734]], shape=(2, 2), dtype=float32)</code><br><code>tf.Tensor([[ 1.2032015  -0.16145211] [ 1.8375425   1.4746517 ]], shape=(2, 2), dtype=float32)</code><br>生成均匀分布随机数 [minval, maxval]是前闭后开区间：<br>tf.random.uniform(维度, minval = 最小值, maxval = 最大值)<br><code>f = tf.random.uniform([2, 2], minval=0, maxval=1)</code><br><code>print(f)</code><br>[minval, maxval]是前闭后开区间<br>输出结果：<br><code>tf.Tensor([[0.33821785 0.6668376 ] [0.9511744  0.16224515]], shape=(2, 2), dtype=float32)</code>  </p>
-<hr>
-<p><strong>感谢北京大学网课项目</strong></p>
-<ul>
-<li><a href="https://www.bilibili.com/video/BV1B7411L7Qt?p=4" target="_blank" rel="noopener">网课</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/28/tensorflow/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -580,9 +218,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
